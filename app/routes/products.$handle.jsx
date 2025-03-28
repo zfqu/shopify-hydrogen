@@ -2,6 +2,7 @@ import {useLoaderData} from '@remix-run/react';
 import {
   getSelectedProductOptions,
   Analytics,
+  ShopPayButton,
   useOptimisticVariant,
   getProductOptions,
   getAdjacentAndFirstAvailableVariants,
@@ -116,6 +117,10 @@ export default function Product() {
           selectedVariant={selectedVariant}
         />
         <br />
+        <ShopPayButton 
+          variantIds={[selectedVariant?.id]} 
+          storeDomain={"http://notarealshop.myshopify.com"} 
+        />
         <br />
         <p>
           <strong>Description</strong>
